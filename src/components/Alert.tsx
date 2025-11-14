@@ -2,18 +2,16 @@ import type { ReactNode } from "react";
 
 interface Props {
   children: ReactNode;
-  vis: string;
-  onClick: () => void;
+  onClose: () => void;
 }
 
-const Alert = ({ vis, children, onClick }: Props) => {
+const Alert = ({ children, onClose }: Props) => {
   return (
-<div className={`alert alert-primary alert-dismissible fade ${vis}`} role="alert">
-  {children}
-  <button type="button" className="close" data-dismiss="alert" onClick={onClick}aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
+    <div className={"alert alert-primary alert-dismissible"}>
+      {children}
+      <button type="button" className="btn-close" data-bs-dismiss="alert" onClick={onClose} aria-label="Close">
+      </button>
+    </div>
   );
 };
 
