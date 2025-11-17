@@ -1,5 +1,7 @@
 import { useState } from "react";
-import './ListGroup.css';
+import styles from './ListGroup.module.css';
+
+
 
 
 interface Props {
@@ -15,7 +17,7 @@ function ListGroup({ items, heading, onSelectItem }: Props) {
     <>
       <h1>{heading}</h1>
       {items.length === 0 && <p>No item found</p>}
-      <ul className="list-group">
+      <ul className={[styles.ListGroup, styles.container].join(' ')}>
         {items.map((item, index) => (
           <li
             className={
